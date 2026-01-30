@@ -1,27 +1,210 @@
+/* SKIBIDI TOILET THEME - brrr skibidi dop dop dop yes yes */
 
-          body {
-            background-image: url("hand-hearts-at-sunset-941.jpeg");
-            background-size: 100vw;
-            font-family: Pacifico, sans-serif;
-            background-color: #cdffff;
-            font-size: 2vw;
-            color: #222;
-          }
-          span.block-line > span {
-              background-image: linear-gradient(90deg,#f00,#ff2b00,#f50,#ff8000,#fa0,#ffd500,#ff0,#d4ff00,#af0,#80ff00,#5f0,#2bff00,#0f0,#00ff2b,#0f5,#00ff80,#0fa,#00ffd5,#0ff,#00d4ff,#0af,#007fff,#05f,#002bff,#00f,#2a00ff,#50f,#7f00ff,#a0f,#d400ff,#f0f,#ff00d4,#f0a);
-              color: #0000;
-              -webkit-background-clip: text;
-              background-clip: text;
-          }
-          .rainbow-text .block-line > span {
-              display: inline-block;
-          }
-          h1 {
-            font-size: 4vw;
-          }
-          #heading-container {
-            text-align: center;
-          }
-          ul {
-            list-style: none;
-          }          
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #1a0a2e 0%, #16213e 50%, #0f0f23 100%);
+  min-height: 100vh;
+  font-family: 'Bangers', cursive;
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated background toilets */
+body::before {
+  content: "🚽 🗣️ 📺 🚽 🗣️ 📺 🚽 🗣️ 📺";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  font-size: 3rem;
+  opacity: 0.1;
+  animation: scrollBg 20s linear infinite;
+  pointer-events: none;
+  white-space: nowrap;
+  line-height: 4rem;
+}
+
+@keyframes scrollBg {
+  0% { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+/* Glowing container */
+#heading-container, .main-container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Epic glitch title effect */
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff,
+    0 0 40px #ff00ff,
+    0 0 80px #00ffff;
+  animation: glitch 2s infinite, float 3s ease-in-out infinite;
+  margin-bottom: 1rem;
+  letter-spacing: 3px;
+}
+
+@keyframes glitch {
+  0%, 90%, 100% { transform: translate(0); }
+  92% { transform: translate(-5px, 2px); }
+  94% { transform: translate(5px, -2px); }
+  96% { transform: translate(-3px, -1px); }
+  98% { transform: translate(3px, 1px); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Skibidi subtitle */
+.skibidi-subtitle {
+  font-size: clamp(1rem, 3vw, 2rem);
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  margin-bottom: 2rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+/* Info text */
+p {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: #e0e0e0;
+  margin: 1rem 0;
+  letter-spacing: 2px;
+}
+
+/* Navigation buttons */
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+li {
+  display: inline-block;
+}
+
+a {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+  color: #000;
+  text-decoration: none;
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(0.6rem, 1.5vw, 1rem);
+  border-radius: 10px;
+  border: 3px solid #fff;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+}
+
+a:hover {
+  transform: scale(1.1) rotate(-2deg);
+  box-shadow:
+    0 0 30px #ff00ff,
+    0 0 60px #00ffff;
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+}
+
+/* Toilet emoji decorations */
+.toilet-deco {
+  font-size: 4rem;
+  animation: spin 4s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.speaker-head {
+  font-size: 5rem;
+  animation: bounce 0.5s ease infinite;
+  display: inline-block;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Card style for content pages */
+.content-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border: 2px solid rgba(255, 0, 255, 0.5);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+}
+
+/* Image styling */
+img {
+  border-radius: 15px;
+  border: 4px solid #ff00ff;
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Back button */
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+}
+
+/* Footer */
+.footer-text {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  a {
+    width: 80%;
+    text-align: center;
+  }
+}
